@@ -1,0 +1,60 @@
+* {
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    list-style-type: none;
+    background-color: rgb(171, 171, 186);
+    font-size: x-large;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    margin: 50px;
+    width: 400px;
+    height: 600px;
+    justify-content: space-evenly;
+
+}
+
+.display {
+    padding: 20px;
+    border: solid black;
+    margin: 10px;
+}
+
+.buttons {
+    display: flex;
+    border: solid black ;
+    justify-content: center;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.clear {
+    background-color: rgb(222, 28, 28);
+    width: 100px;
+}
+
+.number {
+    background-color: rgb(43, 42, 46);
+}
+
+.operator {
+    background-color: rgb(45, 28, 177);
+}
+
+.equals {
+    background-color: green;
+    width: 100px;
+}
+
+.left {
+    flex-direction: column;
+}
