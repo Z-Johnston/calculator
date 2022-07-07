@@ -32,7 +32,7 @@ clears.addEventListener('click', function() {
     clear();
 });
 
-//
+//Function to set each number
 function setNum(input) {
     num1 = num1.toString()
     if (!operator) {
@@ -45,13 +45,18 @@ function setNum(input) {
     }
 }
 
-//
+//Function to set the operator
 function setOperator(input) {
-    operator = input.textContent;
-    display.textContent = `${num1} ${operator}`
+    if (operator) {
+        operate();
+    }
+    if (!operator) {
+        operator = input.textContent;
+        display.textContent = `${num1} ${operator}`
+    }
 }
 
-//
+//Function to clear each number, operator, and display
 function clear() {
     num1 = '';
     num2 = '';
@@ -59,7 +64,7 @@ function clear() {
     display.textContent = ''
 }
 
-//
+//Function to operate based on assigned num1, num2, and operator
 function operate() {
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
@@ -75,12 +80,15 @@ function operate() {
     if (operator == 'x') {
         num1 = multiply(num1, num2);
     }
+    if (operator == '%' && num2 === 0) {
+        num1 = `You don't have the facilities for that, big man`;
+    }
     display.textContent = num1;
     operator = '';
     num2 = '';
 }
 
-//
+//Function  for each basic math operator
 function subtract() {
     return num1 - num2;
 }
@@ -96,4 +104,3 @@ function divide() {
 function multiply() {
     return num1 * num2;
 }
-
